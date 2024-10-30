@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}">
+    <title>IanSamaniego</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  /> 
+</head>
+<style>
+    .container-a{
+        margin-left: 80px;
+        margin-right: 20px;
+    }
+</style>
+<body>
+    <img class="bg-img" src="{{ url_for('static', filename='imgs/Background_A.jpg')}}">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+        <div class="container">
+          <a class="navbar-brand" href="index.html"><strong>IMS</strong></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link" href="gallery.html">Projects</a>
+              <a class="nav-link" href="presentación.html">Learning</a>
+              <a class="nav-link active" href="#" aria-current="page">About</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+     
+    
+    <div class="container-a py-6">
+        <div class="row flex-lg-row-reverse align-items-center g-5">
+            <div class="col-10 mx-auto col-sm-8 col-lg-6">
+                <img src="{{ url_for('static', filename='imgs/Ian_A.JPG')}}" class="d-block rounded mx-lg-auto img-fluid" alt="" loading="lazy">
+            </div>
+            <div class="col-lg-6">
+                <div class="lc-block mb-3" style="color: white;">
+                    <div editable="rich">
+                        <h2 class="fw-bold display-5"><a class="high-t">Hi!</a> The name's Ian.</h2>
+                    </div>
+                </div>
+
+                <div class="lc-block mb-3" style="color: lightgrey;">
+                    <div editable="rich">
+                        <p class="lead ">20 años, mexicano, con una cámara en la mano y una laptop en la otra. 
+                        </p>
+                        <p class="lead">Soy un entusiasta de muchas cosas, pero aquí te dejo un poco de algunas de las que más me importan ahora mismo.</p>
+                        <h2>¡Gusto en conocerte!
+                        </h2>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container-a py-6">
+        <div class="row flex-lg-row align-items-center g-5">
+            <!-- Fila 1 Col 1--> 
+                <div class="col-lg-6">
+                    <div class="lc-block mb-3" style="color: white;">
+                        <div editable="rich">
+                            <h2 class="fw-bold display-5"> This is what I <a class="high-t">Love</a> </h2>
+                            <p class="lead ">Fotografía automotriz, desarrollo web y diseño gráfico, todo esto me encanta y se lleva horas de mi vida como si nada.
+                            </p>
+                            <p class="lead">Cuando tengo algunas horas libres siempre trato de hacer algunas fotos, y creo que esto me ha ayudado a desarrollar el ojo para el diseño.</p>
+                            <h2>¿Se me ve?
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            <!-- Fila 1 Col 2--> 
+            <div class="col-lg-6">
+                <div id="Hobbies" class="carousel carousel-light slide" data-bs-ride="carousel" style="margin-top: 40px; height: 50vh;">
+                    <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#Hobbies" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#Hobbies" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#Hobbies" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            </div>
+                                <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                <img src="{{ url_for('static', filename='imgs/ABOUT/HOBBIES_1.jpg')}}" class="d-block w-100" alt="Slide1">
+                                </div>
+                                <div class="carousel-item">
+                                <img src="{{ url_for('static', filename='imgs/ABOUT/HOBBIES_2.jpg')}}" class="d-block w-100" alt="Slide2">
+                                </div>
+                                <div class="carousel-item">
+                                <img src="{{ url_for('static', filename='imgs/ABOUT/HOBBIES_3.jpg')}}" class="d-block w-100" alt="Slide3">
+                                </div>
+                                </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#Hobbies" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#Hobbies" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                        </button>                  
+                    </div>
+                </div>
+            </div>
+            <div class="row flex-lg-row-reverse align-items-center g-5">
+            <!-- Fila 2 Col 1--> 
+            <div class="col-lg-6">
+                <div class="lc-block mb-3" style="color: lightgrey;">
+                    <div editable="rich">
+                        <h2 class="fw-bold display-5"><a class="high-t">This</a> I loved.</h2>
+                        <p class="lead ">Y aún hay muchas más cosas que forman parte de mí, pero demos una breve vuelta por los gustos que más han marcado mi vida.
+                        </p>
+                        <p class="lead">Filosofía, música y un sinfín de deportes; creo que he sido una persona multifacética, pero a veces esto me ha complicado las cosas. Hoy por hoy creo saber quién soy, pero eso no siempre ha sido así.</p>
+                        <h2>Tengo un soundtrack en mi mente.
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <!-- Fila 2 Col 2--> 
+            <div class="col-lg-6">
+                <div id="Likes" class="carousel carousel-light slide" data-bs-ride="carousel" style="margin-top: 40px; height: 50vh;">
+                    <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#Likes" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#Likes" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#Likes" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+                            <div class="carousel-inner">
+                            <div class="carousel-item active">
+                            <img src="{{ url_for('static', filename='imgs/ABOUT/LIKES-1.jpg')}}" class="d-block w-100" alt="Slide1">
+                            </div>
+                            <div class="carousel-item">
+                            <img src="{{ url_for('static', filename='imgs/ABOUT/LIKES-2.jpg')}}" class="d-block w-100" alt="Slide2">
+                            </div>
+                            <div class="carousel-item">
+                            <img src="{{ url_for('static', filename='imgs/ABOUT/LIKES-3.jpg')}}" class="d-block w-100" alt="Slide3">
+                            </div>
+                            </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#Likes" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#Likes" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                    </button>                  
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+</body>
+</html>

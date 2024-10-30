@@ -1,0 +1,83 @@
+.bg-img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    filter: brightness(0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -2;
+}
+
+.nav-link{
+    position: relative;
+}
+
+.navbar-brand{
+    border-bottom: 2px transparent;
+}
+
+.nav-link::after{
+    content: '';
+    opacity: 0;
+    transition: all 0.2s;
+    height: 2px;
+    width: 100%;
+    background-color: greenyellow;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.nav-link:hover::after{
+    opacity: 1;
+}
+
+.container-a{
+    margin-top: 100px;
+    margin-left: 40px;
+    margin-right: 20px;
+    margin-bottom: 50px;
+}
+
+.container_b{
+    margin-top: 20px;
+}
+
+.high-t{
+    color: lightgray;
+    position: relative;
+    cursor: pointer;
+}
+
+
+.high-t::after{
+    content: '';
+    height: auto;
+    background: greenyellow;
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    width: 100%;
+    z-index: inherit;
+    transition: all 0.3s;
+    transform-origin: 0% 100%;
+
+}
+
+.high-t:hover{
+    color: greenyellow;
+}
+
+.high-t:click::after{
+    transform: scaleY(3.5);
+    transition: all 0.5s;
+}
+
+body{
+    background-attachment: fixed;
+}
+
+.project_card{
+    background: transparent;
+}

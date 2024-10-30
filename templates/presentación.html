@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}">
+      <title>IanSamaniego</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <img class="bg-img" src="{{ url_for('static', filename='imgs/Background_A.jpg')}}">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+        <div class="container">
+          <a class="navbar-brand" href="index.html"><strong>IMS</strong></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link" href="gallery.html">Projects</a>
+              <a class="nav-link active" aria-current="page" href="presentación.html">Learning</a>
+              <a class="nav-link" href="about.html">About</a>
+            </div>
+          </div>
+        </div>
+    </nav>
+
+      <!-- Container 1-->
+  <div class="container py-6" style="margin-top: 20px; margin-bottom: 50px;">
+    <div class="lc-block mb-3" style="color: white;">
+      <div editable="rich">
+        <h2 class="fw-bold display-5"><a class="high-t">Slides.</a>     You've got to love them!</h2>
+      </div>
+    </div>
+    <!-- Row 1-->
+    <div class="row flex-lg-row align-items-left g-5">
+        <div class="col-lg-6">
+            <div class="lc-block mb-3" style="color: rgb(239, 232, 232); font-weight: 400;" >
+                <div editable="rich">
+                  <h2 style="color: greenyellow; padding-top: 20px; padding-bottom: 10px"><kbd style="background-color: hwb(84 18% 80%);">STACK OVERFLOW SURVEY 2024</kbd> 
+                  </h2>
+                  <p class="lead "> En la primera presentación realizada abordamos el tema de la Encuesta por Stack Overflow en su edición 2024, en esta se recopilan y se procesan las respuestas de miles de desarrolladores (profesionales o no) a todo tipo de preguntas.
+                  </p>
+                  <p class="lead "> Desde cuánto tiempo llevan aprendiendo programación, hasta salarios y puestos de trabajo; en esta encuesta hay algo para todos los apasionados por el código.
+                  </p>
+                </div>
+              </div>
+            </div>
+          <div class="col-10 mx-auto col-sm-8 col-lg-6">
+            <div id="carouselExampleIndicators" class="carousel carousel slide" data-bs-ride="carousel" style="margin-top: 40px; height: 50vh;">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                  </div>
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                        <img src="{{ url_for('static', filename='imgs/Presentation/Slide1.jpg')}}" class="d-block w-100" alt="Slide1">
+                        </div>
+                        <div class="carousel-item">
+                        <img src="{{ url_for('static', filename='imgs/Presentation/Slide2.jpg')}}" class="d-block w-100" alt="Slide2">
+                        </div>
+                        <div class="carousel-item">
+                        <img src="{{ url_for('static', filename='imgs/Presentation/Slide3.jpg')}}" class="d-block w-100" alt="Slide3">
+                        </div>
+                        <div class="carousel-item">
+                        <img src="{{ url_for('static', filename='imgs/Presentation/Slide4.jpg')}}" class="d-block w-100" alt="Slide4">
+                        </div>
+                        <div class="carousel-item">
+                        <img src="{{ url_for('static', filename='imgs/Presentation/Slide5.jpg')}}" class="d-block w-100" alt="Slide5">
+                        </div>
+                        <div class="carousel-item">
+                        <img src="{{ url_for('static', filename='imgs/Presentation/Slide6.jpg')}}" class="d-block w-100" alt="Slide6">
+                        </div>
+                        <div class="carousel-item">
+                        <img src="{{ url_for('static', filename='imgs/Presentation/Slide7.jpg')}}" class="d-block w-100" alt="Slide7">
+                        </div>
+                        <div class="carousel-item">
+                        <img src="{{ url_for('static', filename='imgs/Presentation/Slide8.jpg')}}" class="d-block w-100" alt="Slide8">
+                      </div>
+                      </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+                </div>
+                </div>
+                 </div>
+              </div>
+            </div>
+        <!-- Container 2-->
+        <div class="container py-6" style="margin-top: 20px; margin-bottom: 20px;">
+          <div class="lc-block mb-3" style="color: white;">
+            <div editable="rich">
+              <h2 class="fw-bold display-5">Git <a class="high-t">Hub?</a></h2>
+            </div>
+          </div>
+          <!-- Row 2-->
+          <div class="row flex-lg-row align-items-left g-5">
+              <div class="col-lg-6">
+                  <div class="lc-block mb-3" style="color: rgb(239, 232, 232); font-weight: 400;">
+                      <div editable="rich">
+                        <h2 style="color: greenyellow; padding-top: 20px; padding-bottom: 10px"><kbd style="background-color: hwb(84 18% 80%);">$git add. / push / commit</kbd> 
+                        </h2>
+                        <p class="lead "> GitHub y git; no son lo mismo pero ninguno sería lo mismo sin el otro. Con git como una herramienta de control de versiones y GitHub como una app para emplear más agilmente git; estas tecnologías hacen el trabajo de desarrollo mucho más fácil.
+                        </p>
+                        <p class="lead "> Pero aprender a ocupar git es un proceso en sí mismo, y algunos de los comandos más importantes son los siguientes: 
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                <div class="col-10 mx-auto col-sm-8 col-lg-6">
+                  <div id="Git" class="carousel carousel slide" data-bs-ride="carousel" style="margin-top: 40px; height: 50vh;">
+                    <div class="carousel-indicators ">
+                      <button type="button" data-bs-target="#Git" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#Git" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#Git" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                      <button type="button" data-bs-target="#Git" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        </div>
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                              <img src="{{ url_for('static', filename='imgs/GitHub/Git.jpg')}}" class="d-block w-100" alt="Git">
+                              </div>
+                              <div class="carousel-item">
+                              <img src="{{ url_for('static', filename='imgs/GitHub/add.jpg')}}" class="d-block w-100" alt="git add.">
+                              </div>
+                              <div class="carousel-item">
+                              <img src="{{ url_for('static', filename='imgs/GitHub/push&commit.jpg')}}" class="d-block w-100" alt="Push & Commit">
+                              </div>
+                              <div class="carousel-item">
+                              <img src="{{ url_for('static', filename='imgs/GitHub/recap.jpg')}}" class="d-block w-100" alt="Recap">
+                              </div>
+                            </div>
+                          <button class="carousel-control-prev" type="button" data-bs-target="#Git" data-bs-slide="prev" style="display: none";>
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                          </button>
+                          <button class="carousel-control-next" type="button" data-bs-target="#Git" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                      </div>
+                      </div>
+                       </div>
+                    </div>
+      </div>
+      <!-- Container 3-->
+  <div class="container py-6" style="margin-top: 20px; margin-bottom: 20px;">
+    <div class="lc-block mb-3" style="color: white;">
+      <div editable="rich">
+            <h2 class="fw-bold display-5"><a class="high-t">Tecnologías</a> que amamos.</h2>
+      </div>
+    </div>
+        <!-- Row 3-->
+    <div class="row flex-lg-row align-items-left g-5">
+            <div class="col-lg-6">
+                <div class="lc-block mb-3" style="color: rgb(239, 232, 232); font-weight: 400;">
+                    <div editable="rich">
+                      <h2 style="color: greenyellow; padding-top: 20px; padding-bottom: 10px"><kbd style="background-color: hwb(84 18% 80%);">APPs & TECH</kbd> 
+                      </h2>
+                      <p class="lead "> En el desarrollo de aplicaciones entran en juego una gran variedad de elementos y, por lo general,todos resuelven un problema de una forma única y eficaz. Estos elementos incluyen el <strong>lenguaje de programación, los frameworks y un sinfín de tecnologías</strong> con fortalezas únicas.
+                      </p>
+                      <p class="lead "> En la siguiente presentación podemos hallar 5 ejemplos de apps que sacudieron al mundo con su innovación y veremos un pedacito de su proceso de desarrollo.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              <div class="col-10 mx-auto col-sm-8 col-lg-6">
+                <div id="apps" class="carousel carousel slide" data-bs-ride="carousel" style="margin-top: 40px; height: 50vh;">
+                  <div class="carousel-indicators ">
+                    <button type="button" data-bs-target="#apps" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#apps" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#apps" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#apps" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#apps" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                    <button type="button" data-bs-target="#apps" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                      </div>
+                          <div class="carousel-inner">
+                            <div class="carousel-item active">
+                            <img src="{{ url_for('static', filename='imgs/Tecnologías/Tecnologías.jpg')}}" class="d-block w-100" alt="Tecnologías">
+                            </div>
+                            <div class="carousel-item">
+                            <img src="{{ url_for('static', filename='imgs/Tecnologías/YouTube.jpg')}}" class="d-block w-100" alt="YouTube">
+                            </div>
+                            <div class="carousel-item">
+                            <img src="{{ url_for('static', filename='imgs/Tecnologías/Uber.jpg')}}" class="d-block w-100" alt="Uber">
+                            </div>
+                            <div class="carousel-item">
+                            <img src="{{ url_for('static', filename='imgs/Tecnologías/TikTok.jpg')}}" class="d-block w-100" alt="TikTok">
+                            </div>
+                            <div class="carousel-item">
+                            <img src="{{ url_for('static', filename='imgs/Tecnologías/GitHub.jpg')}}" class="d-block w-100" alt="GitHub">
+                            </div>
+                            <div class="carousel-item">
+                            <img src="{{ url_for('static', filename='imgs/Tecnologías/Airbnb.jpg')}}" class="d-block w-100" alt="Airbnb">
+                            </div>
+                          </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#apps" data-bs-slide="prev" style="display: none";>
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#apps" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                    </div>
+                    </div>
+                     </div>
+    </div>
+  </div>
+  </body>
+</html>

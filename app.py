@@ -6,9 +6,33 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
-@app.route('/saludos')
-def saludos():
-    return "Aloha!"
+@app.route('/gallery.html')
+def projects():
+    return render_template('gallery.html')
+
+@app.route('/3D.html')
+def Vr():
+    return render_template('3D.html')
+
+@app.route('/about.html')
+def about():
+    return render_template('about.html')
+
+@app.route('/HangMan.html')
+def HangMan():
+    return render_template('HangMan.html')
+
+@app.route('/presentación.html')
+def Presentations():
+    return render_template('presentación.html')
+
+@app.route('/index.html')
+def IMS():
+    return render_template('index.html')
+
+@app.route('/PrimerRepo.html')
+def Primero():
+    return render_template('PrimerRepo.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=8000,debug=True)
