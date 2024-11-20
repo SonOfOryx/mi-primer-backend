@@ -34,5 +34,9 @@ def IMS():
 def Primero():
     return render_template('PrimerRepo.html')
 
+@app.route('/MODEVA.html')
+def MODEVA():
+    return render_template('MODEVA.html')
+
 if __name__ == '__main__':
     app.run(port=8000,debug=True)
