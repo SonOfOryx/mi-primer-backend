@@ -34,6 +34,14 @@ def IMS():
 def Primero():
     return render_template('PrimerRepo.html')
 
+@app.route('/Python.html')
+def VENV():
+    return render_template('Python.html')
+
+@app.route('/Flutter.html')
+def Flutter():
+    return render_template('Flutter.html')
+
 @app.route('/MODEVA.html')
 def MODEVA():
     return render_template('MODEVA.html')
