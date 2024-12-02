@@ -69,5 +69,44 @@
       </div>
     </div>
   </div>
+
+  <div class="container-a" style="color: white">
+  <h1>Hangman Game</h1>
+    <div id="game">
+        <p id="word">Loading...</p>
+        <p id="status"></p>
+        <p>Enter a letter: <input type="text" id="guess" maxlength="1" /> <button onclick="makeGuess()">Guess</button></p>
+        <p id="remaining"></p>
+    </div>
+  </div>
+
+    <script>
+        async function makeGuess() {
+            const guess = document.getElementById('guess').value;
+            document.getElementById('guess').value = '';
+            if (guess) {
+                const response = await fetch('/guess', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ letter: guess })
+                });
+                const data = await response.json();
+                document.getElementById('word').textContent = data.display_word;
+                document.getElementById('status').textContent = data.game_status === 'ongoing' ? '' : `You ${data.game_status}!`;
+                document.getElementById('remaining').textContent = `Remaining attempts: ${data.remaining_attempts}`;
+            }
+        }
+
+        // Initialize the game
+        document.addEventListener('DOMContentLoaded', async () => {
+            const response = await fetch('/guess', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({}) });
+            const data = await response.json();
+            document.getElementById('word').textContent = data.display_word;
+            document.getElementById('remaining').textContent = `Remaining attempts: ${data.remaining_attempts}`;
+        });
+    </script>
+
 </body>
 </html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>IanSamaniego</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        /* Custom Styles */
+        .container-a {
+            margin-left: 80px;
+            margin-right: 40px;
+        }
+        .img-a {
+            max-width: 100%;
+            border-radius: 1%;
+        }
+        #webcam-container {
+            border-radius: 24px;
+            overflow: hidden;
+            width: 300px;
+            height: 200px;
+            margin-top: 20px;
+        }
+        #label-container {
+            margin-top: 20px;
+        }
+        .progress {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .progress-bar {
+            width: 0%;
+            height: 30px;
+        }
+    </style>
+</head>
+  <body>  
+    <img class="bg-img" src="{{ url_for('static', filename='imgs/Background_A.jpg') }}">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><strong>IMS</strong></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="gallery.html">Projects</a>
+                    <a class="nav-link" href="presentación.html">Learning</a>
+                    <a class="nav-link" href="about.html" aria-current="page">About</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section: Teachable Machine -->
+    <div class="container-a py-6">
+        <div class="lc-block mb-3" style="color: white;">
+            <div editable="rich">
+                <h2 class="fw-bold display-5">Teachable Machine: Image Model</h2>
+                <p class="lead">Click "Start" to begin image recognition using a trained model.</p>
+            </div>
+        </div>
+
+        <button class="btn btn-primary mb-4" onclick="init()">Start</button>
+        <div id="webcam-container"></div>
+        <div id="label-container"></div>
+    </div>
+
+    <div class="container-a py-6">
+      <div class="row flex-lg-row align-items-center g-5">
+          <!-- Fila 1 Col 1--> 
+              <div class="col-lg-6" style="width: 40%;">
+                  <div class="lc-block mb-3" style="color: white;">
+                      <div editable="rich">
+                          <h2 class="fw-bold display-5"> Teachable Machine</h2>
+                          <hr>
+                          <h4>by Google</h4> 
+                          <br>
+                          <p class="lead">Proyecto impulsado por Google para el desarrollo de modelos de Machine Learning que ha sido abierto al público general.</p>
+                          <p class="lead">El modelo permite la rápida recolección de meustras, procesamiento y entrenamiento del modelo y su posterior exportación.</p>
+                      </div>
+                  </div>
+              </div>
+          <!-- Fila 1 Col 2--> 
+          <div class="col-lg-6">
+            <div><img class="img-a" src="{{ url_for('static', filename='imgs/TF/TM_1.jpg')}}"src="{{ url_for('static', filename='imgs/TF/TM_1.jpg')}}"> </div>
+              </div>
+              <div class="row flex-lg-row align-items-center g-5">
+                <!-- Fila 1 Col 1--> 
+                    <div class="col-lg-6">
+                        <div class="lc-block mb-3" style="color: white;">
+                            <div editable="rich">
+                                <h2 class="fw-bold display-5"> Tensor Flow </h2>
+                                <hr>
+                                <h4>Plataforma de extremo a extremo enfocada en el aprendizaje automático</h4> 
+                                <br>
+                                <p class="lead ">Este software permite la fácil aplicación de APIs para el desarrollo de modelos AA en cualquier entorno.</a>.</p>
+                                <p class="lead">Esta misma tecnología potencia el modelo de Teachable Machine.</p>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+              </div>
+                <!-- Fila 1 Col 2--> 
+              <div class="col-lg-6">
+                  <img src="{{ url_for('static', filename='imgs/TF/tensorflow-itop.png')}}" class="d-block w-100" alt="Screenshot">
+              </div>
+  </body>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        const URL = "https://teachablemachine.withgoogle.com/models/q2LkQxD-D/";
+        let model, webcam, labelContainer, maxPredictions;
+
+        const colors = ["#FF5733", "#33FF57", "#3357FF", "#FF33A6", "#A633FF", "#FFC733"];
+
+        async function init() {
+            const modelURL = URL + "model.json";
+            const metadataURL = URL + "metadata.json";
+
+            model = await tmImage.load(modelURL, metadataURL);
+            maxPredictions = model.getTotalClasses();
+
+            const flip = true;
+            webcam = new tmImage.Webcam(300, 200, flip);
+            await webcam.setup();
+            await webcam.play();
+            window.requestAnimationFrame(loop);
+
+            document.getElementById("webcam-container").appendChild(webcam.canvas);
+            labelContainer = document.getElementById("label-container");
+
+            for (let i = 0; i < maxPredictions; i++) {
+                const progressWrapper = document.createElement("div");
+                progressWrapper.className = "progress";
+                progressWrapper.style.marginBottom = "15px";
+
+                const progressBar = document.createElement("div");
+                progressBar.id = `myBar${i}`;
+                progressBar.className = "progress-bar";
+                progressBar.style.width = "0%";
+                progressBar.style.backgroundColor = colors[i % colors.length];
+
+                progressWrapper.appendChild(progressBar);
+
+                const label = document.createElement("span");
+                label.id = `label${i}`;
+                label.style.display = "block";
+                label.style.color = colors[i % colors.length];
+
+                labelContainer.appendChild(label);
+                labelContainer.appendChild(progressWrapper);
+            }
+        }
+
+        async function loop() {
+            webcam.update();
+            await predict();
+            window.requestAnimationFrame(loop);
+        }
+
+        async function predict() {
+            const prediction = await model.predict(webcam.canvas);
+            for (let i = 0; i < maxPredictions; i++) {
+                const className = prediction[i].className;
+                const probability = prediction[i].probability.toFixed(2) * 100;
+
+                document.getElementById(`label${i}`).innerText = `${className}: ${probability.toFixed(1)}%`;
+                document.getElementById(`myBar${i}`).style.width = probability + "%";
+            }
+        }
+    </script>
+
+  </body>
+</html>
